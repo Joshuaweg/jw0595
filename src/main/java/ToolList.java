@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+//creates list of tools from tools.tsv
 public class ToolList{
 	final static String TOOLSPATH = "src/main/tools.tsv";
 	private Map<String, Tool> toolList;
@@ -14,6 +14,7 @@ public class ToolList{
 		toolList = new HashMap<>();
 		toolCodes = new ArrayList<>();
 	}
+	//method that builds tool list
 	public void buildList(){
 
 		try(Scanner scanner = new Scanner(new File(TOOLSPATH))){
