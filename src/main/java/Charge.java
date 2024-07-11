@@ -1,9 +1,11 @@
+//Creates the Charge Record from charges.tsv
 public class Charge {
 	String type;
 	float daily;
 	boolean weekday;
 	boolean weekend;
 	boolean holiday;
+	//Constructors
 	public Charge(){
 		type="";
 		daily=0;
@@ -18,6 +20,7 @@ public class Charge {
 		weekend = wknd;
 		holiday = holi;
 	}
+	//Methods
 	public String getType(){
 	return type;
 	}
