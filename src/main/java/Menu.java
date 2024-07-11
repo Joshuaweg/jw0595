@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.InputMismatchException;
+//This Class is responsible for all UI interactions when creating rental agreements.
 public class Menu{
 	private ToolList tools;
 	private ChargeList charges;
@@ -21,6 +22,12 @@ public class Menu{
 		discount = 0;
 		
 	}
+	//Main method in Menu for running menu options with user
+	//Every instance of user input has a validation step to make sure entries are valid
+	//Displays all available tools to user with rental charges and charge exceptions
+	//when invalid will repeat user entry step with message to provide correct entry
+	//all entries are used to create RentalAgreement that can be reviewed by user
+	//User can accept or deny rental agreement
 	public void runMenu(){
 		Scanner input = new Scanner(System.in);
 		boolean dateFormat = false;
@@ -85,7 +92,8 @@ public class Menu{
 		}
 		
 	}
-	public void displayTools() {
+    //Displays information about tools in an organized table with numbers labeling each row for selection
+    public void displayTools() {
     // Define column widths
     int indexWidth = 5;
     int toolWidth = 15;
@@ -115,6 +123,7 @@ public class Menu{
 		Tool tl = tools.getItem(index-1);
 		return tl.getCode();
 	}
+	//Validates that date is entered in the proper format
 	private static boolean isValidDate(String date) {
         // Define the date format
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
@@ -129,6 +138,7 @@ public class Menu{
             return false;
         }
 	}
+	//validates that entry is integer
 	private static boolean isInteger(String input) {
         try {
             Integer.parseInt(input);
@@ -137,6 +147,7 @@ public class Menu{
             return false;
         }
     }
+	//formats float values into dollars and cents $X.XX
 	private static String formatAsCurrency(float number) {
         return String.format("$%.2f", number);
     }
