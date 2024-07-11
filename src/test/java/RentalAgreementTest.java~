@@ -1,0 +1,31 @@
+import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertEquals
+
+public class RentalAgreementTest{
+	private rentalAgreement = new RentalAgreement();
+
+	//Test 1
+	//code JAKR
+	//checkout date 9/3/15
+	//rental days 5
+	//Discount 101%
+	@Test
+	public void test1(){
+		rentalAgreement = new RentalAgreement("JAKR","9/3/15",5,101);
+		assertEquals(false,rentalAgreement.isAccepted());
+	}
+	//Test 2
+	//code LADW
+	//checkout date 7/2/20
+	//rental days 3
+	//Discount 10%
+	public void test2(){
+		rentalAgreement("LADW","7/2/20",3,10);
+		assertEquals(true,rentalAgreement.isAccepted());
+		assertEquals(2, rentalAgreement.getChargeDays());
+		assertEquals((float)1.99*2,rentalAgreeement.getPreDiscount());
+		assertEquals((float)1.99*2*0.9,rentalAgreement.getFinalCharge());
+
+	}
+
+}

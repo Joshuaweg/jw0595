@@ -1,0 +1,15 @@
+import java.util.HashMap
+import java.util.Map
+public class ToolList{
+	private Map<string, Tool> toolList;
+	private ToolList (){
+		toolList = new HashMap<>();
+	}
+	public buildList(){
+		this = new ToolList();
+
+	}
+
+
+	
+}
