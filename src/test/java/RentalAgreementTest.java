@@ -1,6 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-
+//runs the test cases specified in documentation
 public class RentalAgreementTest{
 	private RentalAgreement rentalAgreement = new RentalAgreement();
 
